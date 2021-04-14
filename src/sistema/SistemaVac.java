@@ -31,21 +31,83 @@ public class SistemaVac {
 		return "SistemaVac [pessoas=" + pessoas + "]";
 	}
 
-	public void alterarNome(String nome) {}
+	public void alterarNome(String nome, String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setNome(nome);
+			}
+		}
+	}
 	
-	public void alterarCpf(String cpf) {}
+	public void alterarCpf(String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setCpf(cpf);
+			}
+		}
+	}
 	
-	public void alterarEndereco(List<String> endereco) {}
+	public void alterarEndereco(List<String> endereco, String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setEndereco(endereco);
+			}
+		}
+	}
 	
-	public void alterarNumCartao(String numCartao) {}
+	public void alterarNumCartao(String numCartao, String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setNumCartao(numCartao);
+			}
+		}
+	}
 	
-	public void alterarEmail(String email) {}
+	public void alterarEmail(String email, String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setEmail(email);
+			}
+		}
+	}
 	
-	public void alterarTel(String tel) {}
+	public void alterarTel(String tel, String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setTel(tel);
+			}
+		}
+	}
 	
-	public void alterarProfissao(String profissao) {}
+	public void alterarProfissao(String profissao, String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setProfissao(profissao);
+			}
+		}
+	}
 	
-	public void alterarComorbidade(String comorbidade) {}
+	public void alterarComorbidade(String comorbidade, String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setComorbidade(comorbidade);
+			}
+		}
+	}
 	
-	public void alterarDiasAposDose1(int dias) {}
+	public void alterarIdade(int idade, String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setIdade(idade);
+			}
+		}
+	}
+	
+	public void alterarDiasAposDose1(int dias, String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				pessoa.setDiasAposDose1(dias);
+			}
+		}
+	}
 }

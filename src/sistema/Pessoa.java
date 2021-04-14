@@ -91,6 +91,7 @@ public class Pessoa {
 
 	public void setProfissao(String profissao) {
 		this.profissao = profissao;
+		verificarEstado();
 	}
 
 	public String getComorbidade() {
@@ -99,6 +100,7 @@ public class Pessoa {
 
 	public void setComorbidade(String comorbidade) {
 		this.comorbidade = comorbidade;
+		verificarEstado();
 	}
 
 	public int getDiasAposDose1() {
@@ -123,6 +125,7 @@ public class Pessoa {
 
 	public void setIdade(int idade) {
 		this.idade = idade;
+		verificarEstado();
 	}
 
 	@Override
@@ -131,4 +134,5 @@ public class Pessoa {
 				+ ", email=" + email + ", tel=" + tel + ", profissao=" + profissao + ", comorbidade=" + comorbidade
 				+ ", idade=" + idade + ", diasAposDose1=" + diasAposDose1 + ", estado=" + estado + "]";
 	}
+	
 }

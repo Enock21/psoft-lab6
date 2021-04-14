@@ -26,6 +26,7 @@ public class Main {
 		endereco1.add("Numero");
 		
 		sisvac.cadastrar(atributosStr1, idade1, endereco1);
+		sisvac.alterarIdade(60, "111.111.111.11");
 		
 		
 		ArrayList<String> atributosStr2 = new ArrayList<>();
