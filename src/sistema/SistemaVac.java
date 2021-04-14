@@ -20,6 +20,9 @@ public class SistemaVac {
 		String comorbidade = atributosStr.get(6);
 		
 		Pessoa pessoa = new Pessoa(nome, cpf, numCartao, email, tel, profissao, comorbidade, idade, endereco);
+		
+		pessoa.verificarEstado();
+		
 		this.pessoas.add(pessoa);
 	}
 	

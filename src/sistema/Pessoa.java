@@ -33,6 +33,10 @@ public class Pessoa {
 		this.estado = new NaoHabilitada();
 	}
 	
+	public void verificarEstado(){
+		this.estado.atualizarEstado(this);
+	}
+	
 	public String getNome() {
 		return nome;
 	}
