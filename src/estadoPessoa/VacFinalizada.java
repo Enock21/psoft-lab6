@@ -9,8 +9,6 @@ public class VacFinalizada extends Estado{
 	}
 	
 	@Override
-	public void atualizarEstado(Pessoa pessoa) {
-		throw new IllegalArgumentException("Vacina finalizada.");
-	}
+	public void atualizarEstado(Pessoa pessoa) {}
 
 }

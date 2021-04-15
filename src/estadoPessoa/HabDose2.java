@@ -9,8 +9,8 @@ public class HabDose2 extends Estado{
 
 	@Override
 	public void atualizarEstado(Pessoa pessoa) {
-		// TODO Auto-generated method stub
-		
+		pessoa.setVacinaHabilitada(false);
+		pessoa.setEstado(super.proxEstado);
 	}
 }
 
