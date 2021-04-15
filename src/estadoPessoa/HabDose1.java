@@ -9,6 +9,8 @@ public class HabDose1 extends Estado{
 	}
 	
 	public void atualizarEstado(Pessoa pessoa) {
-		
+		pessoa.setVacinaHabilitada(false);
+		pessoa.setDiasAposDose1(0);
+		pessoa.setEstado(super.proxEstado);
 	}
 }

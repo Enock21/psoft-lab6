@@ -17,6 +17,7 @@ public class Pessoa {
 	private int idade;
 	private int diasAposDose1;
 	private Estado estado;
+	private boolean vacinaHabilitada;
 
 	public Pessoa(String nome, String cpf, String numCartao, String email, String tel, String profissao, String comorbidade, int idade, List<String> endereco) {
 		this.nome = nome;
@@ -31,10 +32,19 @@ public class Pessoa {
 		
 		this.diasAposDose1 = -1;
 		this.estado = new NaoHabilitada();
+		this.vacinaHabilitada = false;
 	}
-	
+
 	public void verificarEstado(){
 		this.estado.atualizarEstado(this);
+	}
+	
+	public boolean isVacinaHabilitada() {
+		return vacinaHabilitada;
+	}
+
+	public void setVacinaHabilitada(boolean vacinaHabilitada) {
+		this.vacinaHabilitada = vacinaHabilitada;
 	}
 	
 	public String getNome() {
@@ -89,16 +99,25 @@ public class Pessoa {
 		return profissao;
 	}
 
-	public void setProfissao(String profissao) {
+	public void setProfissaoEstado(String profissao) {
 		this.profissao = profissao;
 		verificarEstado();
 	}
+	
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
+	}
+	
 
 	public String getComorbidade() {
 		return comorbidade;
 	}
 
 	public void setComorbidade(String comorbidade) {
+		this.comorbidade = comorbidade;
+	}
+	
+	public void setComorbidadeEstado(String comorbidade) {
 		this.comorbidade = comorbidade;
 		verificarEstado();
 	}
@@ -107,6 +126,11 @@ public class Pessoa {
 		return diasAposDose1;
 	}
 
+	public void setDiasAposDose1Estado(int diasAposDose1) {
+		this.diasAposDose1 = diasAposDose1;
+		verificarEstado();
+	}
+	
 	public void setDiasAposDose1(int diasAposDose1) {
 		this.diasAposDose1 = diasAposDose1;
 	}
@@ -124,6 +148,10 @@ public class Pessoa {
 	}
 
 	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+	
+	public void setIdadeEstado(int idade) {
 		this.idade = idade;
 		verificarEstado();
 	}

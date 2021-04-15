@@ -11,8 +11,10 @@ public class TomouDose1 extends Estado{
 	
 	@Override
 	public void atualizarEstado(Pessoa pessoa) {
-		// TODO Auto-generated method stub
-		
+		if (pessoa.getDiasAposDose1() > 20) {
+			pessoa.setVacinaHabilitada(true);
+			pessoa.setEstado(super.proxEstado);
+		}
 	}
 
 }

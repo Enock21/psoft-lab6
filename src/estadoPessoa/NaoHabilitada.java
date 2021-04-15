@@ -13,6 +13,7 @@ public class NaoHabilitada extends Estado{
 		pessoa.getProfissao().equals("saude") ||
 		pessoa.getComorbidade().equals("positivo")){
 			pessoa.setEstado(super.proxEstado);
+			pessoa.setVacinaHabilitada(true);
 		}
 	}
 }
