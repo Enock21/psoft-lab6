@@ -13,4 +13,8 @@ public class HabDose1 extends Estado{
 		pessoa.setDiasAposDose1(0);
 		pessoa.setEstado(super.proxEstado);
 	}
+	
+	public String toString() {
+		return "habilitado a dose 1";
+	}
 }

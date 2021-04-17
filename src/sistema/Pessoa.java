@@ -34,6 +34,10 @@ public class Pessoa {
 		this.estado = new NaoHabilitada();
 		this.vacinaHabilitada = false;
 	}
+	
+	public String getEstadoStr() {
+		return this.estado.toString();
+	}
 
 	public void verificarEstado(){
 		this.estado.atualizarEstado(this);
@@ -158,9 +162,9 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", numCartao=" + numCartao
-				+ ", email=" + email + ", tel=" + tel + ", profissao=" + profissao + ", comorbidade=" + comorbidade
-				+ ", idade=" + idade + ", diasAposDose1=" + diasAposDose1 + ", estado=" + estado + "]";
+		return "Nome: " + nome + "\nCPF: " + cpf + "\nEndereco: " + endereco + "\nNumero do Cartao: " + numCartao
+				+ "\nE-mail: " + email + "\nTelefone: " + tel + "\nProfissao: " + profissao + "\nComorbidade: " + comorbidade
+				+ "\nIdade: " + idade + "\nDias Apos Dose 1: " + diasAposDose1 + "\nEstado: " + estado.toString() + "\n";
 	}
 	
 }

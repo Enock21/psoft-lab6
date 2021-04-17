@@ -26,145 +26,167 @@ public class SistemaVac {
 		this.pessoas.add(pessoa);
 	}
 	
-	public void vacinar(String cpf) {
-		boolean cpfCadastrado = false;
+	public String getEstado(String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
+				return pessoa.getEstadoStr();
+			}
+		}
+		
+		return "CPF nao cadastrado.\n";
+	}
+	
+	public String getPessoa(String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				return pessoa.toString();
+			}
+		}
+		
+		return "CPF nao cadastrado.\n";
+	}
+	
+	public String vacinar(String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
 				if (pessoa.isVacinaHabilitada()) {
 					pessoa.verificarEstado();
-					break;
+					return "Vacina aplicada com sucesso. O estado atual eh: " + pessoa.getEstadoStr() + ".\n";
 				}else {
-					throw new IllegalArgumentException("Usuario nao habilitado a vacina.");
+					return "Usuario nao habilitado a vacina.\n";
 				}
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.\n";
 	}
 	
-	@Override
-	public String toString() {
-		return "SistemaVac [pessoas=" + pessoas + "]";
+	public String listar() {
+		int count = 0;
+		String pessoasStr = "PESSOAS CADASTRADAS:\n";
+		for (Pessoa pessoa : this.pessoas) {
+			pessoasStr = pessoasStr + pessoa.toString() + "\n";
+		}
+		return pessoasStr;
 	}
 
-	public void alterarNome(String nome, String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarNome(String nome, String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
 				pessoa.setNome(nome);
+				return "Nome alterado com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
 	}
 	
-	public void alterarCpf(String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarCpf(String velhoCpf, String novoCpf) {
 		for(Pessoa pessoa : this.pessoas) {
-			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
-				pessoa.setCpf(cpf);
+			if (pessoa.getCpf().equals(velhoCpf)) {
+				pessoa.setCpf(novoCpf);
+				return "CPF alterado com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
 	}
 	
-	public void alterarEndereco(List<String> endereco, String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarEndereco(List<String> endereco, String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
 				pessoa.setEndereco(endereco);
+				return "Endereco alterado com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
 	}
 	
-	public void alterarNumCartao(String numCartao, String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarNumCartao(String numCartao, String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
 				pessoa.setNumCartao(numCartao);
+				return "Numero do cartao alterado com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
 	}
 	
-	public void alterarEmail(String email, String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarEmail(String email, String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
 				pessoa.setEmail(email);
+				return "E-mail alterado com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
 	}
 	
-	public void alterarTel(String tel, String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarTel(String tel, String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
 				pessoa.setTel(tel);
+				return "Telefone alterado com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
 	}
 	
-	public void alterarProfissao(String profissao, String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarProfissao(String profissao, String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
 				pessoa.setProfissaoEstado(profissao);
+				return "Profissao alterada com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
 	}
 	
-	public void alterarComorbidade(String comorbidade, String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarComorbidade(String comorbidade, String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
 				pessoa.setComorbidadeEstado(comorbidade);
+				return "Comorbidade alterada com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
 	}
 	
-	public void alterarIdade(int idade, String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarIdade(int idade, String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
 				pessoa.setIdadeEstado(idade);
+				return "Idade alterada com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
 	}
 	
-	public void alterarDiasAposDose1(int dias, String cpf) {
-		boolean cpfCadastrado = false;
+	public String alterarDiasAposDose1(int dias, String cpf) {
 		for(Pessoa pessoa : this.pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				cpfCadastrado = true;
 				pessoa.setDiasAposDose1Estado(dias);
+				return "Dias apos dose 1 alterado com sucesso!";
 			}
 		}
 		
-		if (!cpfCadastrado) { throw new IllegalArgumentException("CPF nao cadastrado."); }
+		return "CPF nao cadastrado.";
+	}
+	
+	public boolean cpfExiste(String cpf) {
+		for(Pessoa pessoa : this.pessoas) {
+			if (pessoa.getCpf().equals(cpf)) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }

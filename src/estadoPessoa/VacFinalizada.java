@@ -10,5 +10,9 @@ public class VacFinalizada extends Estado{
 	
 	@Override
 	public void atualizarEstado(Pessoa pessoa) {}
+	
+	public String toString() {
+		return "vacina finalizada";
+	}
 
 }

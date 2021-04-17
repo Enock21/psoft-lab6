@@ -10,4 +10,6 @@ public abstract class Estado {
 	}
 	
 	public abstract void atualizarEstado(Pessoa pessoa);
+	
+	public abstract String toString();
 }

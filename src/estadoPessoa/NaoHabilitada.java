@@ -16,4 +16,8 @@ public class NaoHabilitada extends Estado{
 			pessoa.setVacinaHabilitada(true);
 		}
 	}
+
+	public String toString() {
+		return "nao habilitado a vacina";
+	}
 }

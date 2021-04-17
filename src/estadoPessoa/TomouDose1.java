@@ -16,5 +16,9 @@ public class TomouDose1 extends Estado{
 			pessoa.setEstado(super.proxEstado);
 		}
 	}
+	
+	public String toString() {
+		return "tomou a dose 1";
+	}
 
 }

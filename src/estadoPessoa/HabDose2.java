@@ -12,5 +12,9 @@ public class HabDose2 extends Estado{
 		pessoa.setVacinaHabilitada(false);
 		pessoa.setEstado(super.proxEstado);
 	}
+	
+	public String toString() {
+		return "habilitado a dose 2";
+	}
 }
 
